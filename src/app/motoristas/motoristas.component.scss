@@ -1,0 +1,158 @@
+$background-color: white;
+$nav-background-color: black;
+$nav-font-color: white;
+$nav-hover-color:#ffc107;
+$nav-logo-color: #ffc107;
+$nav-font-family: Arial, Helvetica, sans-serif;
+$sanduiche-color: white;
+$footer-background-color: black;
+$nav-pills-btn-color: #ffc107;
+$cor-barra-lateral: #ffc107;
+/* FUNDO */
+body{
+    background-color: $background-color;
+}
+/* LOGOTIPO */
+.logo{
+    color: $nav-logo-color;
+    font: {
+        size: 22px;
+    }
+    margin: 0 10px 0 24px; 
+}
+.mobi{
+    color: $nav-logo-color;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0 24px 0 0;
+}
+/* BARRA DE NAVEGAÇÃO*/
+.navegacao{
+    width: 100%;
+    background-color: $nav-background-color;
+    
+    ul{
+        margin: 0;
+        list-style: none;
+        padding: 20px 0;
+    }
+    li{
+        display: inline;
+        padding: 24px ;
+        color: $nav-font-color;
+        cursor: pointer;
+        &:hover{
+            background-color: $nav-hover-color;
+        }
+        font: {
+            family: $nav-font-family;
+            size: 18px;
+        }
+    }
+    a{
+        text-decoration:none;
+        color: white;
+    }
+    .icone-login{
+        &:hover{
+            color: $nav-hover-color; 
+        }
+        display: block;
+        float: right;
+        margin: 5px 24px 0; 
+    }
+}
+/* NAVBAR RESPONSIVA*/
+.icone-sanduiche{
+    font: {
+        size: 30px;
+    }
+    color: $sanduiche-color;
+}
+.conteudo-sanduiche{
+    width: 100%;
+    text-align: right;
+    padding: 10px 20px;
+    display: none;
+}
+@media (max-width: 768px){
+    .conteudo-sanduiche{
+        display:block;
+    }
+    .navegacao{
+        ul{
+            display:none;
+            li{
+                display:block;
+                text-align: center;
+            }
+        }
+    }      
+    .active{
+        padding: 0;
+        display:block;
+    }
+    .espaco{
+        margin-bottom: 30px;
+    }
+}
+/* RODAPE */
+.rodape{
+    background-color: $footer-background-color;
+    height: 250px;
+    width: 100%;
+}
+.copyright{
+    color: white;
+    margin-top: 200px;
+}
+.login{
+    opacity: 0.7;
+}
+.imagem-fundo{
+    width: 100%;
+    height: 630px;
+    object-fit: cover;
+}
+.campos-passageiro{
+    input{
+        margin-top: 40px;
+    }
+}
+.campos-motorista{
+    input{
+        margin-top: 25px;
+    }
+}
+.convite{
+    margin-top: 50px;
+}
+.mobi:hover{
+    color:white;
+}
+nav-link{
+    active{
+        background-color: $nav-pills-btn-color;
+    }
+}
+.table thead th{
+    border-bottom: 1px;
+}
+.barra-lateral{
+    background-color: $cor-barra-lateral;
+    border: 0;
+}
+.tabela-motoristas{
+    background-color: $cor-barra-lateral;
+    border: 0;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: rgba(0,0,0,.9);
+    background-color: #f8f9fa;
+}
+.nav-link{
+    color:black;
+    :hover {
+        color: white;
+    }
+} 
