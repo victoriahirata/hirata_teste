@@ -5,15 +5,16 @@ import { AppComponent } from './app.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FooterModule } from './footer/footer.module';
 import { NavbarModule } from './navbar/navbar.module';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
     NavbarModule,
     FooterModule,
-    FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,

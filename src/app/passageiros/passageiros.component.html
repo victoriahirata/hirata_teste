@@ -13,20 +13,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <!--<tr *ngFor="{let passageiro of passageiros}">
-                                <td >{{passageiro.nome}}</td>
+                            <tr *ngFor="let passageiro of passageiros$ | async">
+                                <td>{{passageiro.nome}}</td>
                                 <td>{{passageiro.dataNascimento}}</td>
                                 <td>{{passageiro.cpf}}</td>
                                 <td>{{passageiro.sexo}}</td>
-                            </tr>-->
+                            </tr>
                         </tbody>
                     </table>
+                    <div *ngIf="error$ | async">
+                        Erro ao carregar os passageiros. Tente novamente mais tarde.
+                    </div>
                 </div>
             </div>
         </div>

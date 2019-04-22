@@ -1,0 +1,19 @@
+http://localhost:3000/passageiros
+###
+
+POST http://localhost:3000/passageiros HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Amanda"
+}
+###
+PUT http://localhost:3000/passageiros/2 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Marcos"
+}
+
+###
+DELETE http://localhost:3000/passageiros/2 

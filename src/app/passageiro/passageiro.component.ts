@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { InvokeFunctionExpr } from '@angular/compiler';
+import { PassageirosService } from '../passageiros/passageiros.service';
+import swal from 'sweetalert';
 @Component({
   selector: 'app-passageiro',
   templateUrl: './passageiro.component.html',
@@ -11,7 +12,7 @@ export class PassageiroComponent implements OnInit {
   form: FormGroup;
   sexos: Array<String> = ['Feminino', 'Masculino'];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private service: PassageirosService) {
   }
 
   get nome() {
@@ -46,7 +47,23 @@ export class PassageiroComponent implements OnInit {
   addPassageiro() {
     this.form.value;
     console.log(this.form.value);
+    if (this.form.valid) {
+      console.log('submit');
+      this.service.create(this.form.value).subscribe(
+        success =>
+          swal({
+            title: "Agora você é um de nossos passageiros!",
+            text: "Que tal chamar uma corrida?",
+            icon: "success",
+          }),
+        error =>
+          swal({
+            title: "Sinto muito...",
+            text: "Não foi possível realizar seu cadastro, tente novamente!",
+            icon: "error",
+          }),
+        () => console.log('request complete')
+      );
+    }
   }
-
-
 }
