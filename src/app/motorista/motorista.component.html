@@ -1,34 +1,80 @@
-<section>
-  <div class="col-md-12">
-      <div class="row">
-          <div class="col-md-6 p-0">
-              <img class="imagem-fundo" src="../../assets/imagens/cars-control-dashboard-142853.jpg">
-          </div>
-          <div class="col-md-6">
-              <form>
-                  <div class="convite" align="center">
-                      <h4 class="text-warning">Espalhe alegria!</h4>
-                      <h5>Se torne um de nossos motoristas</h5>
-                  </div>
-                  <div class="col-md-12 campos-motorista">
-                      <input class="form-control" type="text" id="txtNome" name="txtNome" placeholder="Nome">
-                      <input class="form-control" type="date" id="txtDataNascimento" name="txtDataNascimento"
-                          placeholder="Data de Nascimento">
-                      <input class="form-control" type="text" id="txtCpf" name="txtCpf" placeholder="CPF">
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6 p-0">
+            <img class="imagem-fundo" src="../../assets/imagens/cars-control-dashboard-142853.jpg">
+        </div>
+        <div class="col-md-6">
+            <form [formGroup]="form" (ngSubmit)="addMotorista()">
+                <div class="convite" align="center">
+                    <h4 class="text-warning">Espalhe alegria!</h4>
+                    <h5>Se torne um de nossos motoristas</h5>
+                </div>
+                <div class="col-md-12 campos-motorista">
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="txtNome" name="txtNome" placeholder="Nome"
+                            formControlName="nome" [ngClass]="aplicarErro('nome')">
+                        <div *ngIf="verificarCampo('nome')">
+                            <span class="text-danger" *ngIf="nome.errors.required">
+                                O preenchimento do campo é obrigatório.
+                            </span>
+                            <span class="text-danger" *ngIf="nome.errors.minlength">
+                                O nome deve ser composto por no mínimo 3 caracteres.
+                            </span>
+                            <span class="text-danger" *ngIf="nome.errors.maxlength">
+                                O nome deve ser composto por no máximo 50 caracteres.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="date" id="txtDataNascimento" name="txtDataNascimento"
+                            placeholder="Data de Nascimento" formControlName="dataNascimento"
+                            [ngClass]="aplicarErro('dataNascimento')">
+                        <div *ngIf="verificarCampo('dataNascimento')">
+                            <span class="text-danger" *ngIf="dataNascimento.errors.required">
+                                O preenchimento do campo obrigatório.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="txtCpf" name="txtCpf" placeholder="CPF"
+                            formControlName="cpf" [ngClass]="aplicarErro('cpf')">
+                        <div *ngIf="verificarCampo('cpf')">
+                            <span class="text-danger" *ngIf="cpf.errors.required">
+                                O preenchimento do campo obrigatório.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="txtModeloCarro" name="txtModeloCarro"
+                            placeholder="Modelo do Carro" formControlName="modeloCarro"
+                            [ngClass]="aplicarErro('modeloCarro')">
+                        <div *ngIf="verificarCampo('modeloCarro')">
+                            <span class="text-danger" *ngIf="modeloCarro.errors.required">
+                                O preenchimento do campo obrigatório.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select formControlName="sexo" class="form-control" id="sexo" [ngClass]="aplicarErro('sexo')">
+                            <option selected [ngValue]="null">Selecione o Sexo</option>
+                            <option *ngFor="let sexo of sexos" [value]="sexo">{{sexo}}</option>
+                        </select>
+                        <div *ngIf="verificarCampo('sexo')">
+                            <span class="text-danger" *ngIf="sexo.errors.required">
+                                O preenchimento do campo obrigatório.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-4" align="center">
+                    <button type="button" class="btn btn-warning" [disabled]="!form.valid"
+                        (click)='addMotorista()'>Cadastrar</button>
+                </div>
+                <div class="col-md-12 mt-3" align="center">
+                    <a href="/login">Já sou cadastrado</a>
+                </div>
+            </form>
+        </div>
 
-                      <input class="form-control" type="text" id="txtModeloCarro" name="txtModeloCarro"
-                          placeholder="Modelo do Carro">
-                      <input class="form-control" type="text" id="txtSexo" name="txtSexo" placeholder="Sexo">
-                  </div>
-                  <div class="col-md-12 mt-4" align="center">
-                      <button type="button" class="btn btn-warning">Cadastrar</button>
-                  </div>
-                  <div class="col-md-12 mt-3" align="center">
-                      <a href="#">Já sou cadastrado</a>
-                  </div>
-              </form>
-          </div>
-
-      </div>
-  </div>
-</section>
+    </div>
+</div>

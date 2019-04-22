@@ -3,21 +3,21 @@
     {
       "id": 1,
       "nome": "Victoria",
-      "dataNascimento": "1996/08/08",
-      "cpf": "479.939.068-65",
+      "dataNascimento": "1996-08-08",
+      "cpf": "499.938.067-00",
       "sexo": "feminino"
     },
     {
       "id": 2,
       "nome": "Arthur",
-      "dataNascimento": "1996/08/08",
+      "dataNascimento": "2010-08-08",
       "cpf": "000.000.000-00",
       "sexo": "masculino"
     },
     {
       "id": 3,
       "nome": "Marcos",
-      "dataNascimento": "1969/08/08",
+      "dataNascimento": "2010-08-08",
       "cpf": "111.111.111-11",
       "sexo": "masculino"
     },
@@ -27,97 +27,36 @@
       "cpf": "675756765757",
       "sexo": "Feminino",
       "id": 4
+    }
+  ],
+  "motoristas": [
+    {
+      "id": 1,
+      "nome": "Felipe",
+      "dataNascimento": "1969-10-08",
+      "modeloCarro": "HB20",
+      "cpf": "555.777.000-44",
+      "sexo": "feminino"
     },
     {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "1996-08-08",
-      "cpf": "545345435",
-      "sexo": "Feminino",
-      "id": 5
+      "id": 2,
+      "nome": "André",
+      "dataNascimento": "1990-08-02",
+      "modeloCarro": "Uno",
+      "cpf": "012.345.678-90",
+      "sexo": "feminino"
+    }
+  ],
+  "corridas": [
+    {
+      "idMotorista": 1,
+      "idPassageiro": 1,
+      "valor": "R$45,00"
     },
     {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "1995-08-08",
-      "cpf": "4793906865",
-      "sexo": "Masculino",
-      "id": 6
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "6757-05-07",
-      "cpf": "4793906865",
-      "sexo": "Masculino",
-      "id": 7
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "0888-08-08",
-      "cpf": "4793906865",
-      "sexo": "Feminino",
-      "id": 8
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "0888-08-08",
-      "cpf": "4793906865",
-      "sexo": "Feminino",
-      "id": 9
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "0888-08-08",
-      "cpf": "4793906865",
-      "sexo": "Feminino",
-      "id": 10
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "8888-08-08",
-      "cpf": "4342342",
-      "sexo": "Feminino",
-      "id": 11
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "0888-08-08",
-      "cpf": "47993906865",
-      "sexo": "Masculino",
-      "id": 12
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "275760-06-07",
-      "cpf": "556666",
-      "sexo": "Masculino",
-      "id": 13
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "275760-06-07",
-      "cpf": "556666",
-      "sexo": "Masculino",
-      "id": 14
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "275760-06-07",
-      "cpf": "556666",
-      "sexo": "Masculino",
-      "id": 15
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "275760-06-07",
-      "cpf": "556666",
-      "sexo": "Masculino",
-      "id": 16
-    },
-    {
-      "nome": "Victoria Gomes Hirata",
-      "dataNascimento": "275760-06-07",
-      "cpf": "556666",
-      "sexo": "Masculino",
-      "id": 17
+      "idMotorista": 1,
+      "idPassageiro": 2,
+      "valor": "R$25,00"
     }
   ]
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MotoristasComponent } from './motoristas.component';
 import { SidebarModule } from '../sidebar/sidebar.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { SidebarModule } from '../sidebar/sidebar.module';
   ],
   imports: [
     CommonModule,
-    SidebarModule
+    SidebarModule,
+    ReactiveFormsModule
   ],
   exports:[
     MotoristasComponent

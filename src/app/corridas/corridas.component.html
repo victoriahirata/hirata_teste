@@ -1,5 +1,48 @@
+<form [formGroup]="form" (ngSubmit)="addCorrida()">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 mt-4">
+          <label>Id do passageiro:</label>
+          <input class="form-control" type="number" id="txtIdPassageiro" name="txtIdPassageiro"
+            placeholder="Id do Passageiro" formControlName="idPassageiro" [ngClass]="aplicarErro('idPassageiro')">
+        </div>
+        <div *ngIf="verificarCampo('idPassageiro')">
+          <span class="text-danger" *ngIf="idPassageiro.errors.required">
+            O preenchimento do campo obrigatório.
+          </span>
+        </div>
+        <div class="col-md-3 mt-4">
+          <label>Id do motorista:</label>
+          <input class="form-control" type="number" id="txtIdMotorista" name="txtIdMotorista"
+            placeholder="Id do Motorista" formControlName="idMotorista" [ngClass]="aplicarErro('idMotorista')">
+        </div>
+        <div *ngIf="verificarCampo('idMotorista')">
+          <span class="text-danger" *ngIf="idMotorista.errors.required">
+            O preenchimento do campo obrigatório.
+          </span>
+        </div>
+        <div class="col-md-3 mt-4">
+          <label>Valor da corrida:</label>
+          <input class="form-control" type="text" id="txtValor" name="txtValor" placeholder="Valor da Corrida"
+            formControlName="valor" [ngClass]="aplicarErro('valor')">
+        </div>
+        <div *ngIf="verificarCampo('valor')">
+          <span class="text-danger" *ngIf="valor.errors.required">
+            O preenchimento do campo obrigatório.
+          </span>
+        </div>
+        <div class="col-md-2 mt-4" style="padding-top: 30px;">
+          <button (click)='addCorrida()' class="btn btn-warning" type="button" id="btnCriarCorrida"
+            name="btnCriarCorrida">Criar
+            Corrida</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
 <div class="col-md-12" align="center" style="height: 530px">
-  <div class="col-md-10" style="margin-top: 50px;">
+  <div class="col-md-10 mt-5">
     <div class="card tabela-motoristas">
       <div class="card-body">
         <div class="col-md-12" style="overflow-x:auto;">
@@ -12,10 +55,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Victoria Gomes Hirata</td>
-                <td>Victor Augusto</td>
-                <td>R$ 23,00</td>
+              <tr *ngFor="let corrida of corridas$ | async">
+                <td>{{corrida.idMotorista}}</td>
+                <td>{{corrida.idPassageiro}}</td>
+                <td>{{corrida.valor</td>
               </tr>
             </tbody>
           </table>
@@ -23,21 +66,4 @@
       </div>
     </div>
   </div>
-  <nav aria-label="Page navigation example">
-    <ul class="pagination mt-3 justify-content-center">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
 </div>
